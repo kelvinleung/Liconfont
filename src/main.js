@@ -1,9 +1,8 @@
 const Vue = require('vue')
 const VueRouter = require('vue-router')
-const axios = require('axios')
-import Toast from '../src/components/Toast'
-import GlyphList from '../src/components/GlyphList'
-import AddGlyph from '../src/components/AddGlyph'
+import App from './App'
+import GlyphList from './components/GlyphList'
+import AddGlyph from './components/AddGlyph'
 
 Vue.use(VueRouter)
 
@@ -22,10 +21,7 @@ Vue.directive('focus', {
 
 var app = new Vue({
   el: '#app',
-  name: 'app',
-  data: {
-    content: true
-  },
-  components: { Toast, GlyphList, AddGlyph },
+  template: '<App/>',
+  components: { App },
   router
 }).$mount('#app')
